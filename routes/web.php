@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    $title = 'Available Joabs';
+    $title = 'Available Jobs';
     $jobs = [
         'Web Developer',
         'Database Admin',
