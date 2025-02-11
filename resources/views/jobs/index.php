@@ -4,16 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Listings</title>
+  <title><?php echo $title; ?></title>
 </head>
 
 <body>
   <h1>Available Jobs</h1>
   <ul>
-    <li>Web Developer</li>
-    <li>Database Admin</li>
-    <li>Software Engineer</li>
-    <li>Systems Analysts</li>
+    <?php foreach ($jobs as $job) : ?>
+      <li><?php echo htmlspecialchars($job, ENT_QUOTES, 'UTF-8'); ?></li>
+    <?php endforeach; ?>
   </ul>
 </body>
 
