@@ -7,9 +7,5 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    return '<h1> hello </h1>';
-});
-
-Rout::post('/submit', function () {
-    return 'Submitted';
-});
+    return view('jobs');
+})->name('jobs');
