@@ -74,3 +74,9 @@ Createing a controller with artisan...
 ```
 php artisan make:controller NameOfController
 ```
+
+Or... Even Better!
+
+```
+php artisan make:controller JobController --resource
+```
