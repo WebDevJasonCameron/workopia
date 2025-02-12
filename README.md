@@ -80,3 +80,9 @@ Or... Even Better!
 ```
 php artisan make:controller JobController --resource
 ```
+
+To make components (such as the nav bar)
+
+```
+php artisan make:component Header
+```
