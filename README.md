@@ -86,3 +86,59 @@ To make components (such as the nav bar)
 ```
 php artisan make:component Header
 ```
+
+### Installing Tailwind CSS
+
+https://tailwindcss.com/docs/installation/using-vite
+
+```
+npm i -D tailwindcss postcss autoprefixer
+npm i
+```
+
+Generate a config file
+
+```
+npx tailwindcss init -p
+```
+
+Check to see if the content is added...
+
+```
+content: [
+  "./resources/**/*.blade.php",
+  "./resources/**/*.js",
+  "./resources/**/*.vue",
+]
+```
+
+Check to see if your resources/css/app.css file has the following:
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Finally, include the following in your resources/views/layout.blade.php file (could be in the components sub directory)... and (place it abouve the head's title)
+
+```
+  @vite('resources/css/app.css')
+```
+
+### Run the server (for auto updates):
+
+```
+npm run dev
+```
+
+### Want Font Awesome?
+
+-   Go to cndjs.com and search font-awesome
+-   Copy the link tag... should like below
+
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+```
+
+-   paste into the resources/views/laoyout.blade.php above the @vite (previously added)... (layout could be found in the sub directory (components))
