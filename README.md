@@ -142,3 +142,9 @@ npm run dev
 ```
 
 -   paste into the resources/views/laoyout.blade.php above the @vite (previously added)... (layout could be found in the sub directory (components))
+
+### Making in a nav link or button link with Artisan
+
+```1
+php artisan makd:component NavLink
+```
