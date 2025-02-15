@@ -2,6 +2,17 @@
 
 ## 2025 02 15
 
+### 1000
+
+Creating a migrations with artisan
+
+```
+php artisan make:migration create_job_listings_table
+
+```
+
+### 0900
+
 I got a error telling me:
 
 ```
@@ -9,6 +20,12 @@ Notice: file_put_contents(): Write of 56 bytes failed with errno=32 Broken pipe 
 ```
 
 As such, I commented the line 21 and I don't have the error anymore. This might be a problem later though, so I'm keeping this as a note!
+
+### Better fix
+
+I asked GPT and restarting the server was a better fix: php artisan serve
+
+## =======================================================================
 
 ## Notes Prior to 2025 02 14
 
