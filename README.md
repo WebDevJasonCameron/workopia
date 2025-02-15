@@ -148,3 +148,45 @@ npm run dev
 ```1
 php artisan makd:component NavLink
 ```
+
+### Postgres
+
+using Postgres 14... might (confirmed) be a difference between the app and brew install... using brew,
+
+Start the server
+
+```
+brew services start postgresql@14
+```
+
+Check the server activity
+
+```
+brew services list
+```
+
+Access in terminal
+
+```
+psql postgres
+```
+
+Check dbs
+
+```
+\list
+```
+
+Get users
+
+```
+\du
+```
+
+Quit
+
+```
+\q
+```
+
+Go to pgadmin.org to get the latest version...
