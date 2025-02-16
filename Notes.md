@@ -1,5 +1,53 @@
 # My Notes
 
+## 2025 02 16
+
+Using Tinker in the CLI. Tinkder is the ORM providing the CRUD features
+
+```
+php artisan tinker
+
+App\MOdels\Job::all()
+
+Schema::getColumnListing('job_listings')
+
+
+```
+
+You can use 'q' to quit a function...
+
+Make a variable with of the class with the following (so you don't need to keep writing it out)
+
+```
+$job = App\Models\Job::class
+
+```
+
+Now you can use the following...
+
+```
+$job::all()
+```
+
+Now you can create a record in the db table
+
+```
+$job::create(['title' => 'Job One', 'description' => 'This is job one'])
+
+```
+
+Additional functions with this (using the variable we assigned to the table...)
+
+```
+$job::all()
+$job::find(1)
+$job::find(1)->update(['title' => 'Updated Job '])
+$job::find(4)->delete()
+
+```
+
+---
+
 ## 2025 02 15
 
 ### 1030
