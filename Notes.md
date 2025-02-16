@@ -2,6 +2,16 @@
 
 ## 2025 02 15
 
+### 1030
+
+Create a Model with artisan
+
+```
+php artisan make:model Job
+```
+
+Interestingly, I needed to add `use Illuminate\Database\Eloquent\Factories\HasFactory;` and `use HasFactory; ` in the model that was created...
+
 ### 1000
 
 Creating a migrations with artisan
