@@ -10,6 +10,8 @@ class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
+     * @return view
      */
     public function index(): view
     {
@@ -42,11 +44,11 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      * 
-     * @return string
+     * @return view
      */
-    public function show(string $id): string
+    public function show(Job $job): view
     {
-        return 'show';
+        return view('jobs.show')->with('job', $job);
     }
 
     /**
