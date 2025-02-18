@@ -9,8 +9,8 @@ use Illuminate\Http\RedirectResponse;
 
 class JobController extends Controller
 {
-    /**
-     * Display a listing of the resource.
+    /** Display a listing of the resource.
+     * 
      * 
      * @return view
      */
@@ -31,27 +31,29 @@ class JobController extends Controller
         return view('jobs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
+    /** Store a newly created resource in storage.
+     * 
      * 
      * @param Request $request
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {
-        $title = $request->input('title');
-        $description = $request->input('description');
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
 
         Job::create([
-            'title' => $title,
-            'description' => $description,
+            'title' => $validatedData['title'],
+            'description' => $validatedData['description'],
         ]);
 
         return redirect()->route('jobs.index');
     }
 
-    /**
-     * Display the specified resource.
+    /** Display the specified resource.
+     * 
      * 
      * @return view
      */
@@ -60,8 +62,8 @@ class JobController extends Controller
         return view('jobs.show')->with('job', $job);
     }
 
-    /**
-     * Show the form for editing the specified resource.
+    /** Show the form for editing the specified resource.
+     * 
      * 
      * @param string $id
      * @return string
@@ -71,8 +73,8 @@ class JobController extends Controller
         return 'edit';
     }
 
-    /**
-     * Update the specified resource in storage.
+    /** Update the specified resource in storage.
+     * 
      * 
      * @param Request $request
      * @param string $id
@@ -83,8 +85,8 @@ class JobController extends Controller
         return 'update';
     }
 
-    /**
-     * Remove the specified resource from storage.
+    /** Remove the specified resource from storage.
+     * 
      * 
      * @param string $id
      * @return string
