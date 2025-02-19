@@ -52,6 +52,28 @@ php artisan db:seed --class=RandomUserSeeder
 
 _By the way, the password is hashed, but it is set to be "password" for all users_
 
+### Making a Seeder Based on actual data
+
+If you want to make a seeder baased on actual accumulated data, ensure you place the data in a database/seeder/data directory (you will need to create this). Then past the data in a php file. See the database/seeder/data job_listings.php for an example. Then create a seeder...
+
+```
+php artisan make:seeder JobSeeder
+```
+
+Next, review what was done in the database/seeders/JobSeeder.php file to build out your own seeder. Note, you will need to include a couple of "use" statements that weren't auto generated.
+
+_Note_ you can use '&' to pass a variable as a reference. See below as an example...
+
+```
+foreach($jobListings as &$listing) {}
+```
+
+Once your done with the "JobSeeder" (or what every seeder you created), include the changes in the Database Seeder. This manages all the seeders (deletes data, and runs seeders in the order you need, like users first then job_listings, because job_listings requires users first). Then run the...
+
+```
+php artisan db:seeder
+```
+
 ---
 
 ## 2025 02 18
