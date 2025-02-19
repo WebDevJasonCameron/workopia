@@ -1,5 +1,15 @@
 # My Notes
 
+## 2025 02 18
+
+To update a table using artisan (create a new migration)
+
+```
+php artisan make:migration add_fields_to_job_listings_table --table=job_listings
+```
+
+---
+
 ## 2025 02 16
 
 Using Tinker in the CLI. Tinkder is the ORM providing the CRUD features
