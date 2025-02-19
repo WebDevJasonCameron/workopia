@@ -1,5 +1,59 @@
 # My Notes
 
+## 2025 02 19
+
+Using Factories. This is found in the database / factories. You can use tinker to use the Faker generator. Below is an exampl... (The following creates one user)
+
+```
+\App\Models\User::factory()->create();
+```
+
+To create multiple users...
+
+```
+\App\Models\User::factory()->count(10)->create();
+```
+
+Since one of the columns shows a possible email verification, you can make a user that does not have a verified email with the following...
+
+```
+\App\Models\User::factory()->unverified()->create()
+```
+
+We can also create a factory to fill out our job_listings table. Create the factory with...
+
+```
+php artisan make:factory JobFactory
+```
+
+\*\*See database/factories/JobFactory.php on how to fill out the php (good stuff!)
+
+Then run the new factory in tinker
+
+```
+php artisan tinkder
+
+\App\Models\Job::factory()->create()
+```
+
+Creating a random seeder for the user table
+
+```
+php artisan make:seeder RandomUserSeeder
+```
+
+Then fill out the database/seeers/RandomUserSeeder.php and run it with...
+
+```
+php artisan db:seed     # (this would run the db seeder)
+php artisan db:seed --class=RandomUserSeeder
+
+```
+
+_By the way, the password is hashed, but it is set to be "password" for all users_
+
+---
+
 ## 2025 02 18
 
 To update a table using artisan (create a new migration)
