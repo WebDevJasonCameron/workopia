@@ -1,5 +1,11 @@
 # My Notes
 
+## 2025 02 20
+
+When you make a component, it places it creates a controller and a view. If you want to organize the views by making a sub dir you will need to move that created view into the created sub dir. You will also need to update the controller to return the propper path to that view by including the sub dir in the return path. For example, `return view 'component.inputs.input_view.php'
+
+---
+
 ## 2025 02 19
 
 Using Factories. This is found in the database / factories. You can use tinker to use the Faker generator. Below is an exampl... (The following creates one user)
