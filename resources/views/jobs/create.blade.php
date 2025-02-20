@@ -137,7 +137,7 @@
                     On-Call
                   </option>
                 </select>
-                @error('desjob_typecription')
+                @error('job_type')
                   <p class="text-red-500 text-sm mt-1">
                     {{ $message }}
                   </p>
@@ -146,159 +146,167 @@
 
               <!-- Remote Status -->
               <div class="mb-4">
-                  <label class="block text-gray-700" for="remote"
-                      >Remote</label
-                  >
-                  <select
-                      id="remote"
-                      name="remote"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                  >
-                      <option value="false">No</option>
-                      <option value="true">Yes</option>
-                  </select>
+                <label class="block text-gray-700" for="remote">
+                  Remote
+                </label>
+                <select
+                  id="remote"
+                  name="remote"
+                  class="w-full px-4 py-2 border rounded focus:outline-none">
+                  <option value="false">
+                    No
+                  </option>
+                  <option value="true">
+                    Yes
+                  </option>
+                </select>
               </div>
 
+              <!-- Address -->
               <div class="mb-4">
-                  <label class="block text-gray-700" for="address"
-                      >Address</label
-                  >
-                  <input
-                      id="address"
-                      type="text"
-                      name="address"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="123 Main St"
-                  />
+                <label class="block text-gray-700" for="address">
+                  Address
+                  </label>
+                <input
+                  id="address"
+                  type="text"
+                  name="address"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="123 Main St"/>
               </div>
 
+              <!-- City -->
               <div class="mb-4">
-                  <label class="block text-gray-700" for="city"
-                      >City</label
-                  >
-                  <input
-                      id="city"
-                      type="text"
-                      name="city"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="Albany"
-                  />
+                <label class="block text-gray-700" for="city">
+                  City
+                </label>
+                <input
+                  id="city"
+                  type="text"
+                  name="city"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="Albany"/>
               </div>
 
+              <!-- State -->
               <div class="mb-4">
-                  <label class="block text-gray-700" for="state"
-                      >State</label
-                  >
-                  <input
-                      id="state"
-                      type="text"
-                      name="state"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="NY"
-                  />
+                <label class="block text-gray-700" for="state">
+                  State
+                </label>
+                <input
+                  id="state"
+                  type="text"
+                  name="state"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="NY"/>
               </div>
 
+              <!-- Zip Code -->
               <div class="mb-4">
-                  <label class="block text-gray-700" for="zipcode"
-                      >ZIP Code</label
-                  >
-                  <input
-                      id="zipcode"
-                      type="text"
-                      name="zipcode"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="12201"
-                  />
+                <label class="block text-gray-700" for="zipcode">
+                  ZIP Code
+                </label>
+                <input
+                  id="zipcode"
+                  type="text"
+                  name="zipcode"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="12201"/>
               </div>
 
+              <!-- Company Info -->
               <h2
-                  class="text-2xl font-bold mb-6 text-center text-gray-500"
-              >
+                  class="text-2xl font-bold mb-6 text-center text-gray-500">
                   Company Info
               </h2>
 
+              <!-- Company Name -->
               <div class="mb-4">
-                  <label class="block text-gray-700" for="company_name"
-                      >Company Name</label
-                  >
+                <label class="block text-gray-700" for="company_name">
+                  Company Name
+                </label>
+                <input
+                  id="company_name"
+                  type="text"
+                  name="company_name"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="Company name"/>
+              </div>
+
+              <!-- Company Description -->
+              <div class="mb-4">
+                <label
+                    class="block text-gray-700"
+                    for="company_description">
+                      Company Description
+                  </label>
+                <textarea
+                  id="company_description"
+                  name="company_description"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="Company Description"></textarea>
+              </div>
+
+              <!-- Company Website -->
+              <div class="mb-4">
+                <label class="block text-gray-700" for="company_website">
+                  Company Website
+                </label>
+                <input
+                  id="company_website"
+                  type="text"
+                  name="company_website"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="Enter website"/>
+              </div>
+
+              <!-- Contact Phone -->
+              <div class="mb-4">
+                <label class="block text-gray-700" for="contact_phone">
+                  Contact Phone
+                </label>
+                <input
+                  id="contact_phone"
+                  type="text"
+                  name="contact_phone"
+                  class="w-full px-4 py-2 border rounded focus:outline-none"
+                  placeholder="Enter phone"/>
+              </div>
+
+              <!-- Contact Email -->
+              <div class="mb-4">
+                  <label class="block text-gray-700" for="contact_email">
+                    Contact Email
+                  </label>
                   <input
-                      id="company_name"
-                      type="text"
-                      name="company_name"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="Company name"
-                  />
+                    id="contact_email"
+                    type="email"
+                    name="contact_email"
+                    class="w-full px-4 py-2 border rounded focus:outline-none"
+                    placeholder="Email where you want to receive applications"/>
               </div>
 
+              <!-- Company Logo -->
               <div class="mb-4">
-                  <label
-                      class="block text-gray-700"
-                      for="company_description"
-                      >Company Description</label
-                  >
-                  <textarea
-                      id="company_description"
-                      name="company_description"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="Company Description"
-                  ></textarea>
+                <label class="block text-gray-700" for="company_logo">
+                  Company Logo
+                  </label>
+                <input
+                  id="company_logo"
+                  type="file"
+                  name="company_logo"
+                  class="w-full px-4 py-2 border rounded focus:outline-none @error('company_logo') border-red-500 @enderror"/>
+                  @error('company_logo')
+                    <p class="text-red-500 text-sm mt-1">
+                      {{ $message }}
+                    </p>
+                  @enderror
               </div>
 
-              <div class="mb-4">
-                  <label class="block text-gray-700" for="company_website"
-                      >Company Website</label
-                  >
-                  <input
-                      id="company_website"
-                      type="text"
-                      name="company_website"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="Enter website"
-                  />
-              </div>
-
-              <div class="mb-4">
-                  <label class="block text-gray-700" for="contact_phone"
-                      >Contact Phone</label
-                  >
-                  <input
-                      id="contact_phone"
-                      type="text"
-                      name="contact_phone"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="Enter phone"
-                  />
-              </div>
-
-              <div class="mb-4">
-                  <label class="block text-gray-700" for="contact_email"
-                      >Contact Email</label
-                  >
-                  <input
-                      id="contact_email"
-                      type="email"
-                      name="contact_email"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                      placeholder="Email where you want to receive applications"
-                  />
-              </div>
-
-              <div class="mb-4">
-                  <label class="block text-gray-700" for="company_logo"
-                      >Company Logo</label
-                  >
-                  <input
-                      id="company_logo"
-                      type="file"
-                      name="company_logo"
-                      class="w-full px-4 py-2 border rounded focus:outline-none"
-                  />
-              </div>
-
+              <!-- Submit -->
               <button
                   type="submit"
-                  class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 my-3 rounded focus:outline-none"
-              >
+                  class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 my-3 rounded focus:outline-none">
                   Save
               </button>
           </form>
