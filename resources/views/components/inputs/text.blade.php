@@ -2,8 +2,8 @@
         'id', 
         'name', 
         'label' => null, 
-        'type' => null,
-        'value' => null,
+        'type' => 'text',
+        'value' => '',
         'placeholder' => '',
         ])
 

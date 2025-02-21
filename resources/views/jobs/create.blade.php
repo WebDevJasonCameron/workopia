@@ -27,23 +27,11 @@
                 placeholder="Software Engineer" />
 
               <!-- Description -->
-              <div class="mb-4">
-                <label class="block text-gray-700" for="description">
-                  Job Description
-                </label>
-                <textarea
-                  cols="30"
-                  rows="7"
-                  id="description"
-                  name="description"
-                  class="w-full px-4 py-2 border rounded focus:outline-none @error('description') border-red-500 @enderror"
-                  placeholder="We are seeking a skilled and motivated Software Developer to join our growing development team...">{{ old('description') }}</textarea>
-                @error('description')
-                  <p class="text-red-500 text-sm mt-1">
-                    {{ $message }}
-                  </p>
-                @enderror
-              </div>
+              <x-inputs.text-area 
+                id="description"
+                name="description"
+                label="Description"
+                placeholder="We are seeking a skilled and motivated Software Developer..." />
 
               <!-- Salary -->
               <x-inputs.text 
@@ -54,28 +42,18 @@
                 placeholder="90000" />
 
               <!-- Reguirements -->
-              <div class="mb-4">
-                <label class="block text-gray-700" for="requirements">
-                  Requirements
-                </label>
-                <textarea
-                  id="requirements"
-                  name="requirements"
-                  class="w-full px-4 py-2 border rounded focus:outline-none"
-                  placeholder="Bachelor's degree in Computer Science"></textarea>
-              </div>
+              <x-inputs.text-area 
+                id="requirements"
+                name="requirements"
+                label="Requirements"
+                placeholder="Bachelor's degree in Computer Science" />
 
               <!-- Benefits -->
-              <div class="mb-4">
-                <label class="block text-gray-700" for="benefits">
-                  Benefits
-                </label>
-                <textarea
-                  id="benefits"
-                  name="benefits"
-                  class="w-full px-4 py-2 border rounded focus:outline-none"
-                  placeholder="Health insurance, 401k, paid time off"></textarea>
-              </div>
+              <x-inputs.text-area 
+              id="benefits"
+              name="benefits"
+              label="Benefits"
+              placeholder="Health insurance, 401k, paid time off" />
 
               <!-- Tags -->
               <x-inputs.text 
@@ -183,18 +161,11 @@
               placeholder="Company Name" />
 
               <!-- Company Description -->
-              <div class="mb-4">
-                <label
-                    class="block text-gray-700"
-                    for="company_description">
-                      Company Description
-                  </label>
-                <textarea
-                  id="company_description"
-                  name="company_description"
-                  class="w-full px-4 py-2 border rounded focus:outline-none"
-                  placeholder="Company Description"></textarea>
-              </div>
+              <x-inputs.text-area 
+              id="company_description"
+              name="company_description"
+              label="Company Description"
+              placeholder="Enter Company Description" />
 
               <!-- Company Website -->
               <x-inputs.text 
