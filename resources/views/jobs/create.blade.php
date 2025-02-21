@@ -144,6 +144,7 @@
               id="company_website"
               name="company_website"
               label="Company Website"
+              type="url"
               placeholder="Enter Company Website" />
 
               <!-- Contact Phone -->
