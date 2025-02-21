@@ -1,5 +1,11 @@
 # My Notes
 
+## 2025 02 21
+
+Alpine.js with Laravel. Go to the website: alpinejs.dev
+
+---
+
 ## 2025 02 20
 
 When you make a component, it places it creates a controller and a view. If you want to organize the views by making a sub dir you will need to move that created view into the created sub dir. You will also need to update the controller to return the propper path to that view by including the sub dir in the return path. For example, `return view 'component.inputs.input_view.php'
