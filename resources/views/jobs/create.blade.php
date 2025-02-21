@@ -64,59 +64,31 @@
 
 
               <!-- Job Type -->
-              <div class="mb-4">
-                <label class="block text-gray-700" for="job_type">
-                  Job Type
-                </label>
-                <select
-                  id="job_type"
-                  name="job_type"
-                  class="w-full px-4 py-2 border rounded focus:outline-none @error('description') border-red-500 @enderror">
-                  <option value="Full-Time" {{ old('job_type') == 'Full-Time' ? 'selected' : '' }}>
-                      Full-Time
-                  </option>
-                  <option value="Part-Time" {{ old('job_type') == 'Part-Time' ? 'selected' : '' }}>
-                    Part-Time
-                  </option>
-                  <option value="Contract" {{ old('job_type') == 'Contract' ? 'selected' : '' }}>
-                    Contract</option>
-                  <option value="Temporary" {{ old('job_type') == 'Temporary' ? 'selected' : '' }}>
-                    Temporary
-                  </option>
-                  <option value="Internship" {{ old('job_type') == 'Internship' ? 'selected' : '' }}>
-                    Internship
-                  </option>
-                  <option value="Volunteer" {{ old('job_type') == 'Volunteer' ? 'selected' : '' }}>
-                    Volunteer
-                  </option>
-                  <option value="On-Call" {{ old('job_type') == 'On-Call' ? 'selected' : '' }}>
-                    On-Call
-                  </option>
-                </select>
-                @error('job_type')
-                  <p class="text-red-500 text-sm mt-1">
-                    {{ $message }}
-                  </p>
-                @enderror
-              </div>
+              <x-inputs.select 
+                id="job_type"
+                name="job_type"
+                label="Job Type"
+                value="{{ old('job_type') }}"
+                :options="[
+                  'Full-Time' => 'Full-Time', 
+                  'Part-Time' => 'Part-Time', 
+                  'Contract' => 'Contract', 
+                  'Temporary' => 'Temporary', 
+                  'Internship' => 'Internship', 
+                  'Volunteer' => 'Volunteer', 
+                  'On-Call' => 'On-Call', 
+                  ]" />
 
               <!-- Remote Status -->
-              <div class="mb-4">
-                <label class="block text-gray-700" for="remote">
-                  Remote
-                </label>
-                <select
-                  id="remote"
-                  name="remote"
-                  class="w-full px-4 py-2 border rounded focus:outline-none">
-                  <option value="false">
-                    No
-                  </option>
-                  <option value="true">
-                    Yes
-                  </option>
-                </select>
-              </div>
+              <x-inputs.select 
+              id="remote"
+              name="remote"
+              label="Remote"
+              value="{{ old('remote') }}"
+              :options="[
+                0 => 'No', 
+                1 => 'Yes',
+                ]" />
 
               <!-- Address -->
               <x-inputs.text 
