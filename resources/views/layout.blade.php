@@ -18,20 +18,18 @@
   @endif
   <main class="container mx-auto p-4 mt-4">
 
-    {{-- Display alert message --}} 
-    @if(session('success'))
-    <x-alert 
-      type="success" 
-      message="{{ session('success') }}" />
+    <!-- Display alert messages -->
+    @if (session('success'))
+      <x-alert 
+        type="success" 
+        message="{{ session('success') }}" />
     @endif
 
-    @if(session('error'))
+    @if (session('error'))
       <x-alert 
-        type="error" 
+        type="error"
         message="{{ session('error') }}" />
     @endif
-
-
 
     {{$slot}}
   </main>

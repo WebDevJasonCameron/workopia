@@ -1,12 +1,13 @@
 @props([
     'type',
-    'message'
+    'message',
+    'timeout' => '5000'
     ])
 
-@if(session()->has($type))
+@if(session()->has('success') || session()->has('error'))
   <div 
     x-data="{ show: true }" 
-    x-init="setTimeout(() => show = false, 5000)"
+    x-init="setTimeout(() => show = false, {{ $timeout }})"
     x-show="show"
     class="p-4 m-4 text-sm text-white rounded {{$type == 'success' ? 'bg-green-500' : 'bg-red-500'}}">
     {{ $message }}
