@@ -1,5 +1,15 @@
 # My Notes
 
+## 2025 02 22
+
+I wanted to reset my db data cause of all the crazy entries I put into it. I knew this should be easy but I didn't realize how easy it is with the seeder.
+
+```
+php artisan db:seed
+```
+
+---
+
 ## 2025 02 21
 
 Alpine.js with Laravel. Go to the website: alpinejs.dev
