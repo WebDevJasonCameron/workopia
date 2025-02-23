@@ -1,5 +1,21 @@
 # My Notes
 
+## 2025 02 24
+
+A really neet line to see file data you're uploading can be found with this do and die function:
+
+```
+dd($request->file('company_logo'));
+```
+
+Setting up a place to locally store the image files:
+
+```
+php artisan storage:link
+```
+
+---
+
 ## 2025 02 22
 
 I wanted to reset my db data cause of all the crazy entries I put into it. I knew this should be easy but I didn't realize how easy it is with the seeder.
