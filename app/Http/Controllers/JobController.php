@@ -134,7 +134,7 @@ class JobController extends Controller
         // Check for image
         if ($request->hasFile('company_logo')) {
             // Delete old logo
-            Storage::delete('publich/logos/' . basename($job->company_logo));
+            Storage::delete('public/logos/' . basename($job->company_logo));
 
             // Store the file and get path
             $path = $request->file('company_logo')->store('logos', 'public');
