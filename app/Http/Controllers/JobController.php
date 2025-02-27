@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Models\Job;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;                         // Lets you replace image
+use App\Models\Job;
 
 class JobController extends Controller
 {
     /** Display a listing of the resource.
      * 
-     * 
+     * @route GET "/jobs"
      * @return view
      */
     public function index(): view
@@ -22,9 +22,9 @@ class JobController extends Controller
         return view('jobs.index')->with('jobs', $jobs);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * 
+    /** Show the form for creating a new resource.
+     *
+     * @route GET "/jobs/create"
      * @return view
      */
     public function create(): view
@@ -34,7 +34,7 @@ class JobController extends Controller
 
     /** Store a newly created resource in storage.
      * 
-     * 
+     * @route POST "/jobs"
      * @param Request $request
      * @return RedirectResponse
      */
@@ -82,7 +82,7 @@ class JobController extends Controller
 
     /** Display the specified resource.
      * 
-     * 
+     * @route GET "/jobs/{$id}"
      * @return view
      */
     public function show(Job $job): view
@@ -92,7 +92,7 @@ class JobController extends Controller
 
     /** Show the form for editing the specified resource.
      * 
-     * 
+     * @route GET "/jobs/{$id}/edit"
      * @param Job $job
      * @return View
      */
@@ -103,7 +103,7 @@ class JobController extends Controller
 
     /** Update the specified resource in storage.
      * 
-     * 
+     * @route PUT "/jobs/{$id}"
      * @param Request $request
      * @param Job $job
      * @return RedirectResponse
@@ -151,7 +151,7 @@ class JobController extends Controller
 
     /** Remove the specified resource from storage.
      * 
-     * 
+     * @route DELETE "/jobs/{$id}"
      * @param Job $job)
      * @return  RedirectResponse
      */
