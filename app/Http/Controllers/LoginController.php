@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
-    /** Show Login form
+    /** Show Login User
      * 
-     * 
+     * @route POST "/login"
      * @return view
      */
     public function login(): View
@@ -45,5 +46,22 @@ class LoginController extends Controller
         return back()->withErrors([
             'email' => 'Tjhe provided credentials do not match our records',
         ])->onlyInput('email');
+    }
+
+    /** Show Logout User
+     * 
+     * @route POST "/lougout"
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+
+        // Invalidate Session
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
