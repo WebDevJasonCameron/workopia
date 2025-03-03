@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;                         // Lets you replace image
-use Illuminate\Support\Facades\Auth;
 use App\Models\Job;
 
 class JobController extends Controller
@@ -28,13 +27,8 @@ class JobController extends Controller
      * @route GET "/jobs/create"
      * @return view
      */
-    public function create()
+    public function create(): view
     {
-
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
-
         return view('jobs.create');
     }
 
