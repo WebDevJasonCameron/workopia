@@ -1,5 +1,13 @@
 # My Notes
 
+## 2025 03 05
+
+Making a policy for jobs? ...
+
+```
+php artisan make:policy JobPolicy --model=job
+```
+
 ## 2025 02 24
 
 A really neet line to see file data you're uploading can be found with this do and die function:
