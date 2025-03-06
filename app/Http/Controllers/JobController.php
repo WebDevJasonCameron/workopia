@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;                         // Lets you replace image
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Job;
+use Illuminate\Auth\Middleware\Authorize;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 
 class JobController extends Controller
 {
+
+    use AuthorizesRequests;
+
     /** Display a listing of the resource.
      * 
      * @route GET "/jobs"
@@ -98,6 +104,9 @@ class JobController extends Controller
      */
     public function edit(Job $job): View
     {
+        // Check if user is authorized
+        $this->authorize('update', $job);
+
         return view('jobs.edit')->with('job', $job);
     }
 
@@ -110,6 +119,9 @@ class JobController extends Controller
      */
     public function update(Request $request, Job $job): RedirectResponse
     {
+        // Check if user is authorized
+        $this->authorize('update', $job);
+
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
@@ -157,6 +169,10 @@ class JobController extends Controller
      */
     public function destroy(Job $job): RedirectResponse
     {
+
+        // Check if user is authorized
+        $this->authorize('delete', $job);
+
         // If logo, then delete it
         if ($job->company_logo) {
             Storage::delete('public/logos' . $job->company_logo);
