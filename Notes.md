@@ -1,12 +1,22 @@
 # My Notes
 
-## 2025 03 05
+## 2025 03 06
 
-Making a policy for jobs? ...
+Making a policy to check if a user can edit or delete, you use the following... (note the model flag points to which table in the db we are focussing on)
 
 ```
 php artisan make:policy JobPolicy --model=job
 ```
+
+But then you need to register it with a provider using...
+
+```
+php artisan make:provider AuthServiceProvider
+```
+
+This can be very confusing so check out what was done in the app/Providers/AuthServiceProvider.php file. Note, we removed an imported line with a more definded ServiceProvider line at the top (extends original provider line)
+
+---
 
 ## 2025 02 24
 
