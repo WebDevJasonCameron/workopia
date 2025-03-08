@@ -1,5 +1,21 @@
 # My Notes
 
+## 2025 03 08
+
+We need to let users add a profile picture to their profile. This will require making a database migrations. This uses the following artisan command to create a file that we can add methods to perform this function:
+
+```
+php artisan make:migration add_avatar_to_users_table --table=users
+```
+
+After you update up/down methods within the migration cmmand file that was created in the databas directory, you can run it with:
+
+```
+php artisan migrate
+```
+
+---
+
 ## 2025 03 06
 
 Making a policy to check if a user can edit or delete, you use the following... (note the model flag points to which table in the db we are focussing on)
