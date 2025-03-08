@@ -164,7 +164,7 @@ class JobController extends Controller
     /** Remove the specified resource from storage.
      * 
      * @route DELETE "/jobs/{$id}"
-     * @param Job $job)
+     * @param Job $job
      * @return  RedirectResponse
      */
     public function destroy(Job $job): RedirectResponse
