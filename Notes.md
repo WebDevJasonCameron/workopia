@@ -1,5 +1,15 @@
 # My Notes
 
+## 2025 03 10
+
+Paginations is simple. All you need to do on the page is change all() to panginate() in the handler. Then you need nav buttons... but that is easy too. You just put {{ $jobs->links() }} or the equiv on that same view page. It works but it is ugly. You will need to create a vender style with:
+
+```
+php artisan vendor:publish --tag=laravel-pagination
+```
+
+---
+
 ## 2025 03 08
 
 We need to let users add a profile picture to their profile. This will require making a database migrations. This uses the following artisan command to create a file that we can add methods to perform this function:
