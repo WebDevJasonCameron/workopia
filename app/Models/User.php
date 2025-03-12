@@ -47,15 +47,21 @@ class User extends Authenticatable
         ];
     }
 
-    // Relate to job Listing
+    // Relate to job Listing (one to many)
     public function jobListings(): HasMany
     {
         return $this->hasMany(Job::class);          // JobListing
     }
 
-    // Relation to bookmarks
+    // Relation to bookmarks (one to many)
     public function bookmarkedJobs(): BelongsToMany
     {
         return $this->belongsToMany(Job::class, 'job_user_bookmarks')->withTimestamps();
+    }
+
+    // Relation to applicants (manny to many)
+    public function applicants(): HasMany
+    {
+        return $this->hasMany(Applicant::class, 'user_id');
     }
 }
