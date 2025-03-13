@@ -108,6 +108,7 @@
             </button>
 
             <div 
+              x-cloak
               x-show="open"
               class="fixed inset-0 flex items-center justify-center bg-gray-900 bg bg-opacity-50">
                 <div 

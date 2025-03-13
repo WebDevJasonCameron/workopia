@@ -1,5 +1,11 @@
 # My Notes
 
+## 2025 03 13
+
+To fix the blipping motal from showing use `[x-cloak] { display:none !important; }` in the public/css/style.css file. Then add `x-cloak` wherever you are using the `x-show...` flag.
+
+---
+
 ## 2025 03 10
 
 Paginations is simple. All you need to do on the page is change all() to panginate() in the handler. Then you need nav buttons... but that is easy too. You just put {{ $jobs->links() }} or the equiv on that same view page. It works but it is ugly. You will need to create a vender style with:
