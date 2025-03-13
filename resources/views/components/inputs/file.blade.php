@@ -2,6 +2,7 @@
     'id', 
     'name',
     'label' => null,
+    'required' => false,
     ])
 
 <div class="mb-4">
@@ -11,6 +12,7 @@
     </label>
   @endif
   <input
+    {{ $required ? 'required' : '' }}
     id="{{ $id }}"
     type="file"
     name="{{ $name }}"
