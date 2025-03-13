@@ -107,6 +107,7 @@
                 Apply Now
             </button>
 
+            {{-- Modal --}}
             <div 
               x-cloak
               x-show="open"
@@ -117,52 +118,55 @@
                     <h3 class="text-lg font-semibold mb-4">
                       Apply For {{ $job->title }}
                     </h3>
-                    <form enctype="multipart/form-data">
-                      @csrf
-                      <x-inputs.text 
-                        id="full_name" 
-                        name="full_name"
-                        label="Full Name" 
-                        :required="true" />
+                    <form 
+                      method="POST"
+                      action="{{ route('applicant.store', $job->id) }}"
+                      enctype="multipart/form-data">
+                        @csrf
+                        <x-inputs.text 
+                          id="full_name" 
+                          name="full_name"
+                          label="Full Name" 
+                          :required="true" />
 
-                      <x-inputs.text 
-                        id="contact_phone" 
-                        name="contact_phone"
-                        label="Contact Phone" />
+                        <x-inputs.text 
+                          id="contact_phone" 
+                          name="contact_phone"
+                          label="Contact Phone" />
 
-                      <x-inputs.text 
-                        id="contact_email" 
-                        name="contact_email"
-                        label="Contact Email" 
-                        :required="true" />
+                        <x-inputs.text 
+                          id="contact_email" 
+                          name="contact_email"
+                          label="Contact Email" 
+                          :required="true" />
 
-                      <x-inputs.text-area
-                        id="message" 
-                        name="message"
+                        <x-inputs.text-area
+                          id="message" 
+                          name="message"
                         label="Message" />
 
-                      <x-inputs.text 
-                        id="location" 
-                        name="location"
-                        label="Location" />
+                        <x-inputs.text 
+                          id="location" 
+                          name="location"
+                          label="Location" />
 
-                      <x-inputs.file 
-                        id="resume"
-                        name="resume"
-                        label="Upload Your Resume (PDF)" 
-                        :required="true" />
+                        <x-inputs.file 
+                          id="resume"
+                          name="resume"
+                          label="Upload Your Resume (PDF)" 
+                          :required="true" />
 
-                      <button 
-                        type="submit"
-                        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
-                          Submit Application
-                      </button>
+                        <button 
+                          type="submit"
+                          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
+                            Submit Application
+                        </button>
 
-                      <button 
-                        @click="open = false"
-                        class="bg-gray-300 hover:bg-gray-400 text-black px-4 py-2 rounded-md">
-                          Cancel
-                      </button>
+                        <button 
+                          @click="open = false"
+                          class="bg-gray-300 hover:bg-gray-400 text-black px-4 py-2 rounded-md">
+                            Cancel
+                        </button>
 
                     </form>
                 </div>
