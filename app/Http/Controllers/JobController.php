@@ -8,8 +8,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;                         // Lets you replace image
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Job;
-use Illuminate\Auth\Middleware\Authorize;
-use Illuminate\Foundation\Auth\Access\Authorizable;
 
 class JobController extends Controller
 {
@@ -186,5 +184,41 @@ class JobController extends Controller
         }
 
         return redirect()->route('jobs.index')->with('success', 'Job listing deleted successfully!');
+    }
+
+    /** Search Job Listings
+     * 
+     * @route GET "/jobs/searc"
+     * @param Request $request
+     * @return  View
+     */
+    public function search(Request $request): View
+    {
+        $keywords = strtolower($request->input('keywords'));
+        $location = strtolower($request->input('location'));
+
+        $query = Job::query();
+
+        if ($keywords) {
+            $query->where(function ($q) use ($keywords) {
+                $q->whereRaw('LOWER(title) LIKE ? ', ['%' . $keywords . '%'])
+                    ->orWhereRaw('LOWER(description) LIKE ? ', ['%' . $keywords . '%'])
+                    ->orWhereRaw('LOWER(tags) LIKE ? ', ['%' . $keywords . '%']);
+            });
+        }
+
+
+        if ($location) {
+            $query->where(function ($q) use ($location) {
+                $q->whereRaw('LOWER(address) LIKE ? ', ['%' . $location . '%'])
+                    ->orWhereRaw('LOWER(city) LIKE ? ', ['%' . $location . '%'])
+                    ->orWhereRaw('LOWER(state) LIKE ? ', ['%' . $location . '%'])
+                    ->orWhereRaw('LOWER(zipcode) LIKE ? ', ['%' . $location . '%']);
+            });
+        }
+
+        $jobs = $query->paginate(12);
+
+        return view('jobs.index')->with('jobs', $jobs);
     }
 }
