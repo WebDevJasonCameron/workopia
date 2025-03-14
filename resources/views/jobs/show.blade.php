@@ -263,6 +263,7 @@
       style: 'mapbox://styles/mapbox/streets-v11', // Map style
       center: [-74.5, 40], // Default center
       zoom: 9, // Default zoom level
+      failIfMajorPerformanceCaveat: false // Force WebGL even if performance may suffer
     });
 
     // Get address from Laravel view
@@ -271,11 +272,7 @@
     const address = city + ', ' + state;
 
     // Geocode the address
-    fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-        address
-      )}.json?access_token=${mapboxgl.accessToken}`
-    )
+    fetch(`/geocode?address=${encodeURIComponent(address)}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.features.length > 0) {

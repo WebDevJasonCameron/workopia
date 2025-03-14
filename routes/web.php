@@ -10,7 +10,9 @@ use App\Http\Controllers\DashboradController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ApplicantController;
-use App\Models\Applicant;
+use App\Http\Controllers\GeocodeController;
+
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/jobs/search', [JobController::class, 'search'])->name('jobs.search');
@@ -46,3 +48,6 @@ Route::middleware('auth')->group(function () {
 // Applicant
 Route::post('/jobs/{job}/apply', [ApplicantController::class, 'store'])->name('applicant.store')->middleware('auth');
 Route::delete('/applicants/{applicant}', [ApplicantController::class, 'destroy'])->name('applicant.destroy')->middleware('auth');
+
+// Handle the Map Key
+Route::get('/geocode', [GeocodeController::class, 'geocode']);
