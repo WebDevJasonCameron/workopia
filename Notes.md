@@ -1,5 +1,19 @@
 # My Notes
 
+## 2025 03 14
+
+NOTE. running in build, you want to use `npm run build`
+
+===
+
+Did a lot for map box, and you should look at the code and notes from the instructor later when you want to try using it in other applications. However, we are also using mailtrap and this requires you to make a mail object with the following
+
+```
+php artisan make:mail JobApplied
+```
+
+---
+
 ## 2025 03 13
 
 To fix the blipping motal from showing use `[x-cloak] { display:none !important; }` in the public/css/style.css file. Then add `x-cloak` wherever you are using the `x-show...` flag.
